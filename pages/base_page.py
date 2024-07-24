@@ -17,8 +17,11 @@ class BasePage:
     def click_on_element(self, locator):
         return self.driver.find_element(*locator).click()
 
-    def get_text(self, locator):
-        return self.driver.find_element(*locator).text
+    def get_visible_element(self, locator): #Проверить видимость элемента
+        return WebDriverWait(self.driver, 20).until(expected_conditions.visibility_of_element_located((locator)))
+
+    def get_text(self, locator): #Проверить текст элемента
+        return self.get_visible_element(locator).text
 
     def send_keys(self, locator, value):
         return self.driver.find_element(*locator).send_keys(value)

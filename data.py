@@ -13,3 +13,9 @@ class Data:
         'email': 'malafeeva_diana_06089@ya.ru',
         'password': 'malafeeva_06'
     }
+
+
+class TextAnswer:
+    ingredient_modal_close = 'Соберите бургер'
+    ingredient_modal_open = 'Детали ингредиента'
+    ingredient_count = '2'

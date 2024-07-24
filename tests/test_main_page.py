@@ -2,7 +2,7 @@ import allure
 from pages.main_page import MainPage
 from pages.login_page import LoginPage
 from conftest import driver
-from data import Data, Url
+from data import Data, Url, TextAnswer
 
 
 class TestMainPage:
@@ -27,7 +27,7 @@ class TestMainPage:
         main_page = MainPage(driver)
         main_page.open_main_page()
         main_page.click_on_ingredient()
-        assert main_page.modal_text() == 'Детали ингредиента'
+        assert main_page.modal_text() == TextAnswer.ingredient_modal_open
 
     @allure.title('Клик на крестик закрывает окно с деталями')
     def test_ingredient_modal_close(self, driver):
@@ -35,14 +35,14 @@ class TestMainPage:
         main_page.open_main_page()
         main_page.click_on_ingredient()
         main_page.click_modal_close()
-        assert main_page.wait_visibility_constructor_header() == 'Соберите бургер'
+        assert main_page.wait_visibility_constructor_header() == TextAnswer.ingredient_modal_close
 
     @allure.title('При добавлении ингредиента счетчик этого ингредиента увеличивается')
     def test_ingredient_count(self, driver):
         main_page = MainPage(driver)
         main_page.open_main_page()
         main_page.ingredient_drag_and_drop()
-        assert main_page.get_count_bun() == '2'
+        assert main_page.get_count_bun() == TextAnswer.ingredient_count
 
     @allure.title('Залогиненный пользователь может оформить заказ')
     def test_make_order_auth_user(self, driver):

@@ -16,7 +16,7 @@ class OrderPage(BasePage):
     @allure.step('Количество заказов за все время')
     def get_count_all_orders(self):
         self.wait_element(OrderListPageLocators.ALL_ORDERS_COUNT)
-        return self.get_text(OrderListPageLocators.ALL_ORDERS_COUNT)
+        return int(self.get_text(OrderListPageLocators.ALL_ORDERS_COUNT))
 
     @allure.step('Количество заказов за сегодня')
     def get_count_today_orders(self):

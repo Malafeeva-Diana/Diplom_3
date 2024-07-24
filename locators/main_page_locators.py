@@ -13,5 +13,5 @@ class MainPageLocators:
     INGREDIENT_COUNT = By.XPATH, './/p[contains(@class, "counter_counter__num__3nue1")]'  # Счетчик ингредиента
     BASKET = By.XPATH, '//section[contains(@class, "BurgerConstructor_basket")]'  # Корзина
     ORDER_ID = By.XPATH, './/p[text() = "идентификатор заказа"]'  # Идентификатор заказа"
-    ORDER_NUMBER = By.XPATH, './/h2[contains(@class, "Modal_modal__title_shadow__3ikwq")]'  # Номер заказа
+    ORDER_NUMBER = By.XPATH, './/h2[contains(@class, "Modal_modal__title_shadow")]'  # Номер заказа
     OVERLAY = By.CSS_SELECTOR, '.Modal_modal__loading__3534A'
